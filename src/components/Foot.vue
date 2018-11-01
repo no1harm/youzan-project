@@ -26,7 +26,7 @@ export default {
   height: 50px;
   bottom: 0;
   background-color: #fff;
-  z-index: 8;
+  z-index: 999;
   -o-border-image: url(https://b.yzcdn.cn/v2/image/wap/border-line-2.png) 2 stretch;
   border-image: url(https://b.yzcdn.cn/v2/image/wap/border-line-2.png) 2 stretch;
   border-top: 2px solid #e5e5e5
