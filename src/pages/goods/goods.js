@@ -11,7 +11,21 @@ import axios from 'axios'
 import qs from 'qs'
 import mixin from 'js/mixin'
 
+let {id} = qs.parse(location.search.substr(1))
+
 new Vue({
-    el:'',
-    data:{}
+    el:'#app',
+    data:{
+        details:null
+    },
+    created(){
+        this.getDetails()
+    },
+    methods:{
+        getDetails(){
+            axios.get(url.details,{id}).then(res=>{
+                this.details = res.data.data
+            })
+        }
+    }
 })
