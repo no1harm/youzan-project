@@ -1,4 +1,5 @@
 import Foot from 'components/Foot.vue'
+import Swipe from 'components/Swipe.vue'
 let mixin = {
     filters:{
         number(price){
@@ -7,6 +8,7 @@ let mixin = {
     },
     components:{
         Foot,
+        Swipe
     },
 }
 

@@ -10,6 +10,7 @@ import Vue from 'vue'
 import axios from 'axios'
 import qs from 'qs'
 import mixin from 'js/mixin'
+import Swipe from 'components/Swipe.vue'
 
 let {id} = qs.parse(location.search.substr(1))
 
@@ -31,6 +32,13 @@ new Vue({
         getDetails(){
             axios.get(url.details,{id}).then(res=>{
                 this.details = res.data.data
+                this.bannerLists = []
+                this.details.imgs.forEach(item => {
+                    this.bannerLists.push({
+                        clickUrl:'',
+                        img:item
+                    })
+                })
             })
         },
         changeTab(index){
