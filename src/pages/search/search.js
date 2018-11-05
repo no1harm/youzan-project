@@ -29,10 +29,8 @@ new Vue({
         },
         move(){
             if(document.documentElement.scrollTop > 100){
-                console.log(1)
                 this.toShow = true
             }else{
-                console.log(2)
                 this.toShow = false
             }
         },
