@@ -4,6 +4,7 @@ import './goods.css'
 import './goods_theme.css'
 import './goods_mars.css'
 import './goods_sku.css'
+import './goods_transition.css'
 
 import url from 'js/api.js'
 import Vue from 'vue'
@@ -23,7 +24,9 @@ new Vue({
         detailTab,
         currentTab:0,
         dealList:null,
-        bannerLists:null
+        bannerLists:null,
+        skuType:1,
+        showSku:false
     },
     created(){
         this.getDetails()
@@ -52,7 +55,19 @@ new Vue({
                 console.log(res)
                 this.dealList = res.data.data.lists
             })
+        },
+        chooseSku(type){
+            this.skuType = type
+            this.showSku = true
         }
     },
-    mixins:[mixin]
+    mixins:[mixin],
+    watch:{
+        showSku(val,oldVal){
+            document.body.style.overflow = val?'hidden':'auto'
+            document.querySelector('html').style.overflow = val?'hidden':'auto'
+            document.body.style.height = val?'100%':'auto'
+            document.querySelector('html').style.overflow = val?'100%':'auto'
+        }
+    }
 })
