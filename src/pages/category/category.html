@@ -130,6 +130,7 @@
               <h3 class="category-title">热门品牌 </h3>
               <ul class="category-content">
                 <li 
+                  @click="toSearch(item)"
                   v-for="item in subData.brandList"
                   class="category-item js-category-item" 
                   :data-item-id="item.id" 
@@ -142,6 +143,7 @@
               <h3 class="category-title"> 热门分类  </h3>
               <ul class="category-content">
                 <li
+                  @click="toSearch(item)"
                   v-for="item in subData.categoryList" 
                   class="category-item js-category-item" 
                   :data-item-id="item.id" 

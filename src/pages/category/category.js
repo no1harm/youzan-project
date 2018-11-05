@@ -4,7 +4,7 @@ import url from 'js/api.js'
 
 import Vue from 'vue'
 import axios from 'axios'
-import Foot from 'components/Foot.vue'
+import mixin from 'js/mixin.js'
 
 new Vue({
     el:'#app',
@@ -14,9 +14,9 @@ new Vue({
         subData:null,
         rankData:null
     },
-    components:{
-        Foot,
-    },
+    // components:{
+    //     Foot,
+    // },
     created(){
         this.getTopLists()
         this.getSublist(0,0)
@@ -47,11 +47,10 @@ new Vue({
             }).catch(res=>{
                 console.log(res)
             })
+        },
+        toSearch(list){
+            location.href = `search.html?keyword=${list.name}&id=${list.id}`
         }
     },
-    filters:{
-        number(price){
-            return price = price.toFixed(2)
-        }
-    }
+    mixins:[mixin]
 })
