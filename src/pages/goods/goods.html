@@ -23,7 +23,7 @@
 
 <body class=" body-fixed-bottom
             default-theme">
-  <div id="app">
+  <div id="app" v-if="details">
     <div class="container wap-goods internal-purchase" style="min-height: 617px;">
       <div class="content no-sidebar">
         <div class="content-body">
@@ -33,16 +33,20 @@
                 <img class="" src="https://img.yzcdn.cn/upload_files/2017/07/12/FkSvYz8FLLD9-t0smXO43hF6ov7S.jpg?imageView2/2/w/980/h/980/q/75/format/webp">
               </div>
               <div class="swp-page" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; display: block; transform: translate3d(-375px, 0px, 0px);">
-                <img class="js-res-load" data-src="https://img.yzcdn.cn/upload_files/2017/07/12/FvBRA_j6wl7CBVuNHQPl7FHkj0b1.jpg?imageView2/2/w/980/h/980/q/75/format/webp" src="https://img.yzcdn.cn/upload_files/2017/07/12/FvBRA_j6wl7CBVuNHQPl7FHkj0b1.jpg?imageView2/2/w/980/h/980/q/75/format/webp">
+                <img class="js-res-load" data-src="https://img.yzcdn.cn/upload_files/2017/07/12/FvBRA_j6wl7CBVuNHQPl7FHkj0b1.jpg?imageView2/2/w/980/h/980/q/75/format/webp"
+                  src="https://img.yzcdn.cn/upload_files/2017/07/12/FvBRA_j6wl7CBVuNHQPl7FHkj0b1.jpg?imageView2/2/w/980/h/980/q/75/format/webp">
               </div>
               <div class="swp-page page-in-view" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; display: block; transform: translate3d(0px, 0px, 0px);">
-                <img class="js-res-load" data-src="https://img.yzcdn.cn/upload_files/2017/07/12/FpetvOfbRCRmyeg32DBunok9Uvmo.jpg?imageView2/2/w/980/h/980/q/75/format/webp" src="https://img.yzcdn.cn/upload_files/2017/07/12/FpetvOfbRCRmyeg32DBunok9Uvmo.jpg?imageView2/2/w/980/h/980/q/75/format/webp">
+                <img class="js-res-load" data-src="https://img.yzcdn.cn/upload_files/2017/07/12/FpetvOfbRCRmyeg32DBunok9Uvmo.jpg?imageView2/2/w/980/h/980/q/75/format/webp"
+                  src="https://img.yzcdn.cn/upload_files/2017/07/12/FpetvOfbRCRmyeg32DBunok9Uvmo.jpg?imageView2/2/w/980/h/980/q/75/format/webp">
               </div>
               <div class="swp-page" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; display: block; transform: translate3d(375px, 0px, 0px);">
-                <img class="js-res-load" data-src="https://img.yzcdn.cn/upload_files/2017/07/12/FqYpph8-5qfY-sCecemc7LTZb2O2.jpg?imageView2/2/w/980/h/980/q/75/format/webp" src="https://img.yzcdn.cn/upload_files/2017/07/12/FqYpph8-5qfY-sCecemc7LTZb2O2.jpg?imageView2/2/w/980/h/980/q/75/format/webp">
+                <img class="js-res-load" data-src="https://img.yzcdn.cn/upload_files/2017/07/12/FqYpph8-5qfY-sCecemc7LTZb2O2.jpg?imageView2/2/w/980/h/980/q/75/format/webp"
+                  src="https://img.yzcdn.cn/upload_files/2017/07/12/FqYpph8-5qfY-sCecemc7LTZb2O2.jpg?imageView2/2/w/980/h/980/q/75/format/webp">
               </div>
               <div class="swp-page" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; display: block; transform: translate3d(-9999px, 0px, 0px);">
-                <img class="js-res-load" data-src="https://img.yzcdn.cn/upload_files/2017/07/12/FmgpyGwZqitXF7LWnVzmHHmCVfB4.jpg?imageView2/2/w/980/h/980/q/75/format/webp" src="https://img.yzcdn.cn/upload_files/2017/07/12/FmgpyGwZqitXF7LWnVzmHHmCVfB4.jpg?imageView2/2/w/980/h/980/q/75/format/webp">
+                <img class="js-res-load" data-src="https://img.yzcdn.cn/upload_files/2017/07/12/FmgpyGwZqitXF7LWnVzmHHmCVfB4.jpg?imageView2/2/w/980/h/980/q/75/format/webp"
+                  src="https://img.yzcdn.cn/upload_files/2017/07/12/FmgpyGwZqitXF7LWnVzmHHmCVfB4.jpg?imageView2/2/w/980/h/980/q/75/format/webp">
               </div>
             </div>
             <div class="swiper-pagination js-swiper-pagination">
@@ -57,32 +61,32 @@
           </div>
           <!-- <script id="resize-img-script-used"></script> -->
           <div class="goods-header">
-            <h2 class="title">寻找田野|最正宗的上海南汇8424 得奖最多奥运会指定西瓜1只/箱 9-11斤</h2>
+            <h2 class="title">{{details.title}}</h2>
             <span class="hide js-add-wish js-wish-animate wish-add  font-size-12 tag tag-redf30 pull-right">
-                  喜欢
-              </span>
+              喜欢
+            </span>
             <div class="goods-price ">
               <div class="current-price">
-                <span>¥</span><i class="js-goods-price price">98.00</i>
+                <span>¥</span><i class="js-goods-price price">{{details.price | number}}</i>
               </div>
               <span class="btn btn-blue btn-retail hide js-retail-btn">门店有售</span>
               <div class="original-price">
-                108 </div>
+                {{details.originalPrice | number}} </div>
             </div>
             <hr class="with-margin-l">
             <div class="stock-detail">
               <dl>
                 <dt>运费:</dt>
                 <dd class="js-postage-desc" data-postage="免运费">
-                  免运费 </dd>
+                  {{details.postage}} </dd>
               </dl>
               <dl>
                 <dt>剩余:</dt>
-                <dd>450</dd>
+                <dd>{{details.remain}}</dd>
               </dl>
               <dl>
                 <dt>销量:</dt>
-                <dd>50</dd>
+                <dd>{{details.sales}}</dd>
               </dl>
             </div>
           </div>
@@ -101,7 +105,7 @@
                 <a class="custom-store-link clearfix" href="https://h5.youzan.com/v2/home/cz0mk59k">
                   <div class="custom-store-img"></div>
                   <div class="custom-store-name">
-                    寻找田野 </div>
+                    {{details.storeName}} </div>
                   <span class="custom-store-enter">进入店铺</span>
                 </a>
               </div>
@@ -111,11 +115,8 @@
                 <div class="offline-store-branch js-retail-store-name"></div>
               </a>
               <div class="renzheng block-item">
-                <span class="js-rz-item-alert rz-item" data-type="team_certificate_company">
-                  <span class="rz-name font-size-12 c-gray-darker">企业认证</span>
-                </span>
-                <span class="js-rz-item-alert rz-item" data-type="is_secured_transactions">
-                  <span class="rz-name font-size-12 c-gray-darker">担保交易</span>
+                <span class="js-rz-item-alert rz-item" v-for="list in details.identification">
+                  <span class="rz-name font-size-12 c-gray-darker">{{list}}</span>
                 </span>
               </div>
             </div>
@@ -124,13 +125,12 @@
           <div class="js-detail-container" style="margin-top: 10px;">
             <div class="js-tabber-container goods-detail">
               <div class="js-tabber tabber tabber-n2 clearfix orange">
-                <button data-type="goods" class="active">
-                  商品详情 </button>
-                <button data-type="sales">
-                  本店成交 </button>
+                <button v-for="(item,index) in detailTab" :class="{active: index === currentTab}" @click="changeTab(index)">
+                  {{item}} </button>
               </div>
               <div class="js-tabber-content">
-                <div class="js-part hide" data-type="sales">
+                <!-- 本店成交 -->
+                <div class="js-part" v-show="currentTab===1" data-type="sales">
                   <div class="js-traderecord-list block-list-traderecord">
                     <div class="list-header">
                       <span class="col-1">买家</span>
@@ -138,21 +138,15 @@
                       <span class="col-3 center">数量</span>
                     </div>
                     <div class="js-list b-list block block-list">
+                      <div class="block-item" v-for="list in dealList">
+                        <span class="col-1 c-grey-darker">{{list.buyer}}</span>
+                        <span class="col-2 c-grey-dark center">{{list.time}}</span>
+                        <span class="col-3 c-grey-darker center">{{list.num}}</span>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="js-part js-goods-detail goods-tabber-c" data-type="goods">
-                  <div class="js-components-container components-container">
-                    <div class="custom-richtext js-lazy-container js-view-image-list">
-                      <p><img data-origin-width="720" data-origin-height="713" class="js-richtext-img-lazy js-view-image-item" src="https://img.yzcdn.cn/upload_files/2017/05/15/FhU7lMPonHtR8qP4zP4aIKRVkObr.jpg?imageView2/2/w/730/h/0/q/75/format/webp" data-src="https://img.yzcdn.cn/upload_files/2017/05/15/FhU7lMPonHtR8qP4zP4aIKRVkObr.jpg!730x0.jpg"><img data-origin-width="720" data-origin-height="494" class="js-richtext-img-lazy js-view-image-item" src="https://img.yzcdn.cn/upload_files/2017/05/15/FvYqk840X0ubXwFE6Nh0unihqIKm.jpg?imageView2/2/w/730/h/0/q/75/format/webp" data-src="https://img.yzcdn.cn/upload_files/2017/05/15/FvYqk840X0ubXwFE6Nh0unihqIKm.jpg!730x0.jpg"><img data-origin-width="720" data-origin-height="916" class="js-richtext-img-lazy js-view-image-item" src="https://img.yzcdn.cn/upload_files/2017/05/15/FvIfNYewmohf3b3V2yA_hr6whV-A.jpg?imageView2/2/w/730/h/0/q/75/format/webp" data-src="https://img.yzcdn.cn/upload_files/2017/05/15/FvIfNYewmohf3b3V2yA_hr6whV-A.jpg!730x0.jpg"><img data-origin-width="720" data-origin-height="656" class="js-richtext-img-lazy js-view-image-item" src="https://img.yzcdn.cn/upload_files/2017/05/15/FlYJPxbAgmkKjWtvLxwqjUMJHUG3.jpg?imageView2/2/w/730/h/0/q/75/format/webp" data-src="https://img.yzcdn.cn/upload_files/2017/05/15/FlYJPxbAgmkKjWtvLxwqjUMJHUG3.jpg!730x0.jpg"><img data-origin-width="720" data-origin-height="513" class="js-richtext-img-lazy js-view-image-item" src="https://img.yzcdn.cn/upload_files/2017/05/15/FmpaiyW8GbpV2I2QKwm7stoRQkOJ.jpg?imageView2/2/w/730/h/0/q/75/format/webp" data-src="https://img.yzcdn.cn/upload_files/2017/05/15/FmpaiyW8GbpV2I2QKwm7stoRQkOJ.jpg!730x0.jpg"><img data-origin-width="720" data-origin-height="691" class="js-richtext-img-lazy js-view-image-item" src="https://img.yzcdn.cn/upload_files/2017/05/15/Fs5rqsKzMe7qIHhuQAqyM1lcjmfB.jpg?imageView2/2/w/730/h/0/q/75/format/webp" data-src="https://img.yzcdn.cn/upload_files/2017/05/15/Fs5rqsKzMe7qIHhuQAqyM1lcjmfB.jpg!730x0.jpg"><img data-origin-width="720" data-origin-height="531" class="js-richtext-img-lazy js-view-image-item" src="https://img.yzcdn.cn/upload_files/2017/05/15/Foor6_Ipc-Lo9eOX_H_a8g4kWPRW.jpg?imageView2/2/w/730/h/0/q/75/format/webp" data-src="https://img.yzcdn.cn/upload_files/2017/05/15/Foor6_Ipc-Lo9eOX_H_a8g4kWPRW.jpg!730x0.jpg"><img data-origin-width="720" data-origin-height="932" class="js-richtext-img-lazy js-view-image-item" src="https://img.yzcdn.cn/upload_files/2017/05/15/FuuNBFbA_vMYmI6FFbNOemmDX9bd.jpg?imageView2/2/w/730/h/0/q/75/format/webp" data-src="https://img.yzcdn.cn/upload_files/2017/05/15/FuuNBFbA_vMYmI6FFbNOemmDX9bd.jpg!730x0.jpg"><img data-origin-width="720" data-origin-height="707" class="js-richtext-img-lazy js-view-image-item" src="https://img.yzcdn.cn/upload_files/2017/05/15/FotgIfOUlMtvhtH0dhRLlmpKJLv7.jpg?imageView2/2/w/730/h/0/q/75/format/webp" data-src="https://img.yzcdn.cn/upload_files/2017/05/15/FotgIfOUlMtvhtH0dhRLlmpKJLv7.jpg!730x0.jpg"></p>
-                    </div>
-                    <div class="price-intro">
-                      <h4>划线价格说明<i class="icon-arrow"></i></h4>
-                      <p>划线价格：划线的价格可能是商品的专柜价、吊牌价、正品零售价、指导价、曾经展示过的销售价等，仅供您参考。</p>
-                      <p>未划线价格：未划线的价格是商品的销售标价，具体的成交价格可能因会员使用优惠券、积分等发生变化，最终以订单结算价格为准。 </p>
-                      <p>*此说明仅当出现价格比较时有效。若这件商品针对划线价格进行了特殊说明，以特殊说明为准。</p>
-                    </div>
-                  </div>
+                <div class="js-part js-goods-detail goods-tabber-c" v-show="currentTab===0" data-type="goods" v-html="details.description">
                 </div>
               </div>
             </div>
@@ -166,7 +160,8 @@
             <div class="stick-bottom-btns">
               <!-- 尚未开售 -->
               <div class="btn-cart">
-                <a href="https://h5.youzan.com/v2/showcase/goods?alias=1y7n2wi58q1as&amp;source=yzapp&amp;f_platform=yzapp&amp;reft=1499937523785&amp;spm=mars20003" class="js-add-cart">加入购物车</a>
+                <a href="https://h5.youzan.com/v2/showcase/goods?alias=1y7n2wi58q1as&amp;source=yzapp&amp;f_platform=yzapp&amp;reft=1499937523785&amp;spm=mars20003"
+                  class="js-add-cart">加入购物车</a>
               </div>
               <div class="btn-buy">
                 <a href="javascript:;" class="js-buy-it">立即购买</a>
@@ -198,9 +193,12 @@
                 <!-- 商品区域 -->
                 <!-- 展现类型判断 -->
                 <li class="js-goods-card goods-card small-pic card ">
-                  <a href="https://h5.youzan.com/v2/goods/2ov83y79gkn38" class="js-goods link clearfix" target="_blank" data-goods-id="343086880" title="【28号陆续发货】寻找田野|青海有机鲜枸杞 营养价值高安全无农残 吃水果一样吃枸杞">
+                  <a href="https://h5.youzan.com/v2/goods/2ov83y79gkn38" class="js-goods link clearfix" target="_blank"
+                    data-goods-id="343086880" title="【28号陆续发货】寻找田野|青海有机鲜枸杞 营养价值高安全无农残 吃水果一样吃枸杞">
                     <div class="photo-block" data-width="750" data-height="750" style="background-color: rgb(255, 255, 255);">
-                      <img class="goods-photo js-goods-lazy" data-src="https://img.yzcdn.cn/upload_files/2017/07/11/FoN0SazpvslhoiiyuHETeyWHqzTE.jpg?imageView2/2/w/280/h/280/q/75/format/webp" src="https://img.yzcdn.cn/upload_files/2017/07/11/FoN0SazpvslhoiiyuHETeyWHqzTE.jpg?imageView2/2/w/280/h/280/q/75/format/webp" style="">
+                      <img class="goods-photo js-goods-lazy" data-src="https://img.yzcdn.cn/upload_files/2017/07/11/FoN0SazpvslhoiiyuHETeyWHqzTE.jpg?imageView2/2/w/280/h/280/q/75/format/webp"
+                        src="https://img.yzcdn.cn/upload_files/2017/07/11/FoN0SazpvslhoiiyuHETeyWHqzTE.jpg?imageView2/2/w/280/h/280/q/75/format/webp"
+                        style="">
                     </div>
                     <div class="info clearfix info-title info-price btn0">
                       <p class=" goods-title ">【28号陆续发货】寻找田野|青海有机鲜枸杞 营养价值高安全无农残 吃水果一样吃枸杞</p>
@@ -213,9 +211,12 @@
                   </a>
                 </li>
                 <li class="js-goods-card goods-card small-pic card ">
-                  <a href="https://h5.youzan.com/v2/goods/2g06s483u55no" class="js-goods link clearfix" target="_blank" data-goods-id="342718779" title="【米饭版和牛肉版】小龙坎方便火锅 只要一瓶矿泉水就能吃的地道四川火锅">
+                  <a href="https://h5.youzan.com/v2/goods/2g06s483u55no" class="js-goods link clearfix" target="_blank"
+                    data-goods-id="342718779" title="【米饭版和牛肉版】小龙坎方便火锅 只要一瓶矿泉水就能吃的地道四川火锅">
                     <div class="photo-block" data-width="0" data-height="0" style="background-color: rgb(255, 255, 255);">
-                      <img class="goods-photo js-goods-lazy" data-src="https://img.yzcdn.cn/upload_files/2017/07/04/FidWCdQxsEMojh63W8GK016mwPAo.jpg?imageView2/2/w/280/h/280/q/75/format/webp" src="https://img.yzcdn.cn/upload_files/2017/07/04/FidWCdQxsEMojh63W8GK016mwPAo.jpg?imageView2/2/w/280/h/280/q/75/format/webp" style="">
+                      <img class="goods-photo js-goods-lazy" data-src="https://img.yzcdn.cn/upload_files/2017/07/04/FidWCdQxsEMojh63W8GK016mwPAo.jpg?imageView2/2/w/280/h/280/q/75/format/webp"
+                        src="https://img.yzcdn.cn/upload_files/2017/07/04/FidWCdQxsEMojh63W8GK016mwPAo.jpg?imageView2/2/w/280/h/280/q/75/format/webp"
+                        style="">
                     </div>
                     <div class="info clearfix info-title info-price btn0">
                       <p class=" goods-title ">【米饭版和牛肉版】小龙坎方便火锅 只要一瓶矿泉水就能吃的地道四川火锅</p>
@@ -228,9 +229,12 @@
                   </a>
                 </li>
                 <li class="js-goods-card goods-card small-pic card ">
-                  <a href="https://h5.youzan.com/v2/goods/1y8wz9sm8da8k" class="js-goods link clearfix" target="_blank" data-goods-id="342676309" title="寻找田野|绍兴黄酒 良宵 2012年古法手工原浆半干黄酒 礼盒装 送礼佳品">
+                  <a href="https://h5.youzan.com/v2/goods/1y8wz9sm8da8k" class="js-goods link clearfix" target="_blank"
+                    data-goods-id="342676309" title="寻找田野|绍兴黄酒 良宵 2012年古法手工原浆半干黄酒 礼盒装 送礼佳品">
                     <div class="photo-block" data-width="750" data-height="750" style="background-color: rgb(255, 255, 255);">
-                      <img class="goods-photo js-goods-lazy" data-src="https://img.yzcdn.cn/upload_files/2017/07/04/Fq1yXSOb84HmElu-Qgrm65EmAeIz.jpg?imageView2/2/w/280/h/280/q/75/format/webp" src="https://img.yzcdn.cn/upload_files/2017/07/04/Fq1yXSOb84HmElu-Qgrm65EmAeIz.jpg?imageView2/2/w/280/h/280/q/75/format/webp" style="">
+                      <img class="goods-photo js-goods-lazy" data-src="https://img.yzcdn.cn/upload_files/2017/07/04/Fq1yXSOb84HmElu-Qgrm65EmAeIz.jpg?imageView2/2/w/280/h/280/q/75/format/webp"
+                        src="https://img.yzcdn.cn/upload_files/2017/07/04/Fq1yXSOb84HmElu-Qgrm65EmAeIz.jpg?imageView2/2/w/280/h/280/q/75/format/webp"
+                        style="">
                     </div>
                     <div class="info clearfix info-title info-price btn0">
                       <p class=" goods-title ">寻找田野|绍兴黄酒 良宵 2012年古法手工原浆半干黄酒 礼盒装 送礼佳品</p>
@@ -243,9 +247,12 @@
                   </a>
                 </li>
                 <li class="js-goods-card goods-card small-pic card ">
-                  <a href="https://h5.youzan.com/v2/goods/27082kgcgmrqs" class="js-goods link clearfix" target="_blank" data-goods-id="342108270" title="寻找田野|新疆库车小白杏 400g*4盒  长在树上的白色蜂蜜">
+                  <a href="https://h5.youzan.com/v2/goods/27082kgcgmrqs" class="js-goods link clearfix" target="_blank"
+                    data-goods-id="342108270" title="寻找田野|新疆库车小白杏 400g*4盒  长在树上的白色蜂蜜">
                     <div class="photo-block" data-width="800" data-height="800" style="background-color: rgb(255, 255, 255);">
-                      <img class="goods-photo js-goods-lazy" data-src="https://img.yzcdn.cn/upload_files/2017/07/12/FhxXtAXp1pEauruMKjw2QZCuCjbQ.jpg?imageView2/2/w/280/h/280/q/75/format/webp" src="https://img.yzcdn.cn/upload_files/2017/07/12/FhxXtAXp1pEauruMKjw2QZCuCjbQ.jpg?imageView2/2/w/280/h/280/q/75/format/webp" style="">
+                      <img class="goods-photo js-goods-lazy" data-src="https://img.yzcdn.cn/upload_files/2017/07/12/FhxXtAXp1pEauruMKjw2QZCuCjbQ.jpg?imageView2/2/w/280/h/280/q/75/format/webp"
+                        src="https://img.yzcdn.cn/upload_files/2017/07/12/FhxXtAXp1pEauruMKjw2QZCuCjbQ.jpg?imageView2/2/w/280/h/280/q/75/format/webp"
+                        style="">
                     </div>
                     <div class="info clearfix info-title info-price btn0">
                       <p class=" goods-title ">寻找田野|新疆库车小白杏 400g*4盒 长在树上的白色蜂蜜</p>
@@ -258,9 +265,12 @@
                   </a>
                 </li>
                 <li class="js-goods-card goods-card small-pic card ">
-                  <a href="https://h5.youzan.com/v2/goods/2fnugsg7z7xo4" class="js-goods link clearfix" target="_blank" data-goods-id="341654863" title="寻找田野|无锡阳山水蜜桃 可以吸着吃的水蜜桃 单果200g礼盒装顺丰直达">
+                  <a href="https://h5.youzan.com/v2/goods/2fnugsg7z7xo4" class="js-goods link clearfix" target="_blank"
+                    data-goods-id="341654863" title="寻找田野|无锡阳山水蜜桃 可以吸着吃的水蜜桃 单果200g礼盒装顺丰直达">
                     <div class="photo-block" data-width="800" data-height="800" style="background-color: rgb(255, 255, 255);">
-                      <img class="goods-photo js-goods-lazy" data-src="https://img.yzcdn.cn/upload_files/2017/07/12/FvDOdNLYTkgPg8_LC16vBTKUkpDp.jpg?imageView2/2/w/280/h/280/q/75/format/webp" src="https://img.yzcdn.cn/upload_files/2017/07/12/FvDOdNLYTkgPg8_LC16vBTKUkpDp.jpg?imageView2/2/w/280/h/280/q/75/format/webp" style="">
+                      <img class="goods-photo js-goods-lazy" data-src="https://img.yzcdn.cn/upload_files/2017/07/12/FvDOdNLYTkgPg8_LC16vBTKUkpDp.jpg?imageView2/2/w/280/h/280/q/75/format/webp"
+                        src="https://img.yzcdn.cn/upload_files/2017/07/12/FvDOdNLYTkgPg8_LC16vBTKUkpDp.jpg?imageView2/2/w/280/h/280/q/75/format/webp"
+                        style="">
                     </div>
                     <div class="info clearfix info-title info-price btn0">
                       <p class=" goods-title ">寻找田野|无锡阳山水蜜桃 可以吸着吃的水蜜桃 单果200g礼盒装顺丰直达</p>
@@ -273,9 +283,12 @@
                   </a>
                 </li>
                 <li class="js-goods-card goods-card small-pic card ">
-                  <a href="https://h5.youzan.com/v2/goods/2ocrgu7fw6dic" class="js-goods link clearfix" target="_blank" data-goods-id="340716475" title="认养一头牛 安全无添加的好牛奶/酸奶">
+                  <a href="https://h5.youzan.com/v2/goods/2ocrgu7fw6dic" class="js-goods link clearfix" target="_blank"
+                    data-goods-id="340716475" title="认养一头牛 安全无添加的好牛奶/酸奶">
                     <div class="photo-block" data-width="0" data-height="0" style="background-color: rgb(255, 255, 255);">
-                      <img class="goods-photo js-goods-lazy" data-src="https://img.yzcdn.cn/upload_files/2017/06/14/FlAhOUgjHk6uwBhTmMW95hHPlVJh.jpg?imageView2/2/w/280/h/280/q/75/format/webp" src="https://img.yzcdn.cn/upload_files/2017/06/14/FlAhOUgjHk6uwBhTmMW95hHPlVJh.jpg?imageView2/2/w/280/h/280/q/75/format/webp" style="">
+                      <img class="goods-photo js-goods-lazy" data-src="https://img.yzcdn.cn/upload_files/2017/06/14/FlAhOUgjHk6uwBhTmMW95hHPlVJh.jpg?imageView2/2/w/280/h/280/q/75/format/webp"
+                        src="https://img.yzcdn.cn/upload_files/2017/06/14/FlAhOUgjHk6uwBhTmMW95hHPlVJh.jpg?imageView2/2/w/280/h/280/q/75/format/webp"
+                        style="">
                     </div>
                     <div class="info clearfix info-title info-price btn0">
                       <p class=" goods-title ">认养一头牛 安全无添加的好牛奶/酸奶</p>
@@ -288,9 +301,12 @@
                   </a>
                 </li>
                 <li class="js-goods-card goods-card small-pic card ">
-                  <a href="https://h5.youzan.com/v2/goods/365anhqcodi84" class="js-goods link clearfix" target="_blank" data-goods-id="339552343" title="新西兰进口佳沛绿奇异果  多规格包邮 单果90g--110g">
+                  <a href="https://h5.youzan.com/v2/goods/365anhqcodi84" class="js-goods link clearfix" target="_blank"
+                    data-goods-id="339552343" title="新西兰进口佳沛绿奇异果  多规格包邮 单果90g--110g">
                     <div class="photo-block" data-width="0" data-height="0" style="background-color: rgb(255, 255, 255);">
-                      <img class="goods-photo js-goods-lazy" data-src="https://img.yzcdn.cn/upload_files/2017/06/02/FlFNqGPuFKS_DlTAoJTcX9VEDv_4.jpg?imageView2/2/w/280/h/280/q/75/format/webp" src="https://img.yzcdn.cn/upload_files/2017/06/02/FlFNqGPuFKS_DlTAoJTcX9VEDv_4.jpg?imageView2/2/w/280/h/280/q/75/format/webp" style="">
+                      <img class="goods-photo js-goods-lazy" data-src="https://img.yzcdn.cn/upload_files/2017/06/02/FlFNqGPuFKS_DlTAoJTcX9VEDv_4.jpg?imageView2/2/w/280/h/280/q/75/format/webp"
+                        src="https://img.yzcdn.cn/upload_files/2017/06/02/FlFNqGPuFKS_DlTAoJTcX9VEDv_4.jpg?imageView2/2/w/280/h/280/q/75/format/webp"
+                        style="">
                     </div>
                     <div class="info clearfix info-title info-price btn0">
                       <p class=" goods-title ">新西兰进口佳沛绿奇异果 多规格包邮 单果90g--110g</p>
@@ -303,9 +319,12 @@
                   </a>
                 </li>
                 <li class="js-goods-card goods-card small-pic card ">
-                  <a href="https://h5.youzan.com/v2/goods/3f2rgi8pm8xgk" class="js-goods link clearfix" target="_blank" data-goods-id="339441682" title="四杰克系列葡萄酒 五星酒庄出品 750ML">
+                  <a href="https://h5.youzan.com/v2/goods/3f2rgi8pm8xgk" class="js-goods link clearfix" target="_blank"
+                    data-goods-id="339441682" title="四杰克系列葡萄酒 五星酒庄出品 750ML">
                     <div class="photo-block" data-width="800" data-height="800" style="background-color: rgb(255, 255, 255);">
-                      <img class="goods-photo js-goods-lazy" data-src="https://img.yzcdn.cn/upload_files/2017/07/12/Fh2E3KeB4j0rAOdILQAC52F_B4hb.jpg?imageView2/2/w/280/h/280/q/75/format/webp" src="https://img.yzcdn.cn/upload_files/2017/07/12/Fh2E3KeB4j0rAOdILQAC52F_B4hb.jpg?imageView2/2/w/280/h/280/q/75/format/webp" style="">
+                      <img class="goods-photo js-goods-lazy" data-src="https://img.yzcdn.cn/upload_files/2017/07/12/Fh2E3KeB4j0rAOdILQAC52F_B4hb.jpg?imageView2/2/w/280/h/280/q/75/format/webp"
+                        src="https://img.yzcdn.cn/upload_files/2017/07/12/Fh2E3KeB4j0rAOdILQAC52F_B4hb.jpg?imageView2/2/w/280/h/280/q/75/format/webp"
+                        style="">
                     </div>
                     <div class="info clearfix info-title info-price btn0">
                       <p class=" goods-title ">四杰克系列葡萄酒 五星酒庄出品 750ML</p>
@@ -318,9 +337,12 @@
                   </a>
                 </li>
                 <li class="js-goods-card goods-card small-pic card ">
-                  <a href="https://h5.youzan.com/v2/goods/273xg8phauxvo" class="js-goods link clearfix" target="_blank" data-goods-id="339414742" title="寻找田野|墨西哥进口牛油果 单果140g--180g  6个装 包邮">
+                  <a href="https://h5.youzan.com/v2/goods/273xg8phauxvo" class="js-goods link clearfix" target="_blank"
+                    data-goods-id="339414742" title="寻找田野|墨西哥进口牛油果 单果140g--180g  6个装 包邮">
                     <div class="photo-block" data-width="1080" data-height="1080" style="background-color: rgb(255, 255, 255);">
-                      <img class="goods-photo js-goods-lazy" data-src="https://img.yzcdn.cn/upload_files/2017/07/12/FuDDKJmd-yfvmaDUfk-PO-yETRwZ.jpg?imageView2/2/w/280/h/280/q/75/format/webp" src="https://img.yzcdn.cn/upload_files/2017/07/12/FuDDKJmd-yfvmaDUfk-PO-yETRwZ.jpg?imageView2/2/w/280/h/280/q/75/format/webp" style="">
+                      <img class="goods-photo js-goods-lazy" data-src="https://img.yzcdn.cn/upload_files/2017/07/12/FuDDKJmd-yfvmaDUfk-PO-yETRwZ.jpg?imageView2/2/w/280/h/280/q/75/format/webp"
+                        src="https://img.yzcdn.cn/upload_files/2017/07/12/FuDDKJmd-yfvmaDUfk-PO-yETRwZ.jpg?imageView2/2/w/280/h/280/q/75/format/webp"
+                        style="">
                     </div>
                     <div class="info clearfix info-title info-price btn0">
                       <p class=" goods-title ">寻找田野|墨西哥进口牛油果 单果140g--180g 6个装 包邮</p>
@@ -333,9 +355,12 @@
                   </a>
                 </li>
                 <li class="js-goods-card goods-card small-pic card ">
-                  <a href="https://h5.youzan.com/v2/goods/36a5xxtuihz10" class="js-goods link clearfix" target="_blank" data-goods-id="338917983" title="花园系列葡萄酒 五星酒庄出品 750ML">
+                  <a href="https://h5.youzan.com/v2/goods/36a5xxtuihz10" class="js-goods link clearfix" target="_blank"
+                    data-goods-id="338917983" title="花园系列葡萄酒 五星酒庄出品 750ML">
                     <div class="photo-block" data-width="800" data-height="800" style="background-color: rgb(255, 255, 255);">
-                      <img class="goods-photo js-goods-lazy" data-src="https://img.yzcdn.cn/upload_files/2017/07/12/FoCENpKklzLyD5VpWVEtS0_jbGc8.jpg?imageView2/2/w/280/h/280/q/75/format/webp" src="https://img.yzcdn.cn/upload_files/2017/07/12/FoCENpKklzLyD5VpWVEtS0_jbGc8.jpg?imageView2/2/w/280/h/280/q/75/format/webp" style="">
+                      <img class="goods-photo js-goods-lazy" data-src="https://img.yzcdn.cn/upload_files/2017/07/12/FoCENpKklzLyD5VpWVEtS0_jbGc8.jpg?imageView2/2/w/280/h/280/q/75/format/webp"
+                        src="https://img.yzcdn.cn/upload_files/2017/07/12/FoCENpKklzLyD5VpWVEtS0_jbGc8.jpg?imageView2/2/w/280/h/280/q/75/format/webp"
+                        style="">
                     </div>
                     <div class="info clearfix info-title info-price btn0">
                       <p class=" goods-title ">花园系列葡萄酒 五星酒庄出品 750ML</p>
@@ -350,7 +375,8 @@
               </ul>
             </div>
             <p class="center" style="margin: 10px 0 20px;">
-              <a href="https://h5.youzan.com/v2/showcase/homepage?kdt_id=16546132" class="center btn btn-white btn-xsmall font-size-14 " style="padding:8px 26px;">进店逛逛&gt;</a>
+              <a href="https://h5.youzan.com/v2/showcase/homepage?kdt_id=16546132" class="center btn btn-white btn-xsmall font-size-14 "
+                style="padding:8px 26px;">进店逛逛&gt;</a>
             </p>
           </div>
         </div>
@@ -392,14 +418,18 @@
     <div class="search-bar" style="display:none;">
       <form class="search-form" action="https://h5.youzan.com/v2/search" method="GET">
         <input type="search" class="search-input" placeholder="搜索商品" name="q" value="">
-        <input type="hidden" name="kdt_id" value="16546132"><a class="js-search-cancel search-cancel" href="javascript:;">取消</a><span class="search-icon"></span><span class="close-icon hide"></span></form>
+        <input type="hidden" name="kdt_id" value="16546132"><a class="js-search-cancel search-cancel" href="javascript:;">取消</a><span
+          class="search-icon"></span><span class="close-icon hide"></span></form>
       <div class="history-wrap center">
-        <ul class="history-list search-recom-list js-history-list clearfix"></ul><a class="tag tag-clear js-tag-clear c-gray-darker hide" href="javascript:;">清除历史搜索</a></div>
+        <ul class="history-list search-recom-list js-history-list clearfix"></ul><a class="tag tag-clear js-tag-clear c-gray-darker hide"
+          href="javascript:;">清除历史搜索</a>
+      </div>
     </div>
     <div id="yFzBKP9GDL" style="height: 100%; position: fixed; top: 0px; left: 0px; right: 0px; background-color: rgba(0, 0, 0, 0.7); z-index: 1000; transition: none 0.2s ease; opacity: 1; display: none;"></div>
     <div id="QfEqtDbeK9" class="sku-layout sku-box-shadow popup" style="overflow: hidden; position: absolute; z-index: 1000; background: white; bottom: 0px; left: 0px; right: 0px; visibility: visible; transform: translate3d(0px, 0px, 0px); transition: all 300ms ease; opacity: 1; display: none;">
       <div class="sku-layout-title name-card sku-name-card">
-        <div class="thumb"><img class="js-goods-thumb goods-thumb" src="https://img.yzcdn.cn/upload_files/2017/07/12/FkSvYz8FLLD9-t0smXO43hF6ov7S.jpg?imageView2/2/w/100/h/100/q/75/format/webp?imageView2/2/w/100/h/100/q/75/format/webp" alt=""></div>
+        <div class="thumb"><img class="js-goods-thumb goods-thumb" src="https://img.yzcdn.cn/upload_files/2017/07/12/FkSvYz8FLLD9-t0smXO43hF6ov7S.jpg?imageView2/2/w/100/h/100/q/75/format/webp?imageView2/2/w/100/h/100/q/75/format/webp"
+            alt=""></div>
         <div class="detail goods-base-info clearfix">
           <p class="title c-black ellipsis">寻找田野|最正宗的上海南汇8424 得奖最多奥运会指定西瓜1只/箱 9-11斤</p>
           <div class="goods-price clearfix">

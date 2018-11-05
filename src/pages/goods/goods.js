@@ -13,10 +13,15 @@ import mixin from 'js/mixin'
 
 let {id} = qs.parse(location.search.substr(1))
 
+let detailTab = ['商品详情','本店成交']
+
 new Vue({
     el:'#app',
     data:{
-        details:null
+        details:null,
+        detailTab,
+        currentTab:0,
+        dealList:null
     },
     created(){
         this.getDetails()
@@ -26,6 +31,19 @@ new Vue({
             axios.get(url.details,{id}).then(res=>{
                 this.details = res.data.data
             })
+        },
+        changeTab(index){
+            this.currentTab = index
+            if(index === 1){
+                this.getDeal()
+            }
+        },
+        getDeal(){
+            axios.get(url.deal,{id}).then(res=>{
+                console.log(res)
+                this.dealList = res.data.data.lists
+            })
         }
-    }
+    },
+    mixins:[mixin]
 })
