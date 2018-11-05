@@ -21,7 +21,8 @@ new Vue({
         details:null,
         detailTab,
         currentTab:0,
-        dealList:null
+        dealList:null,
+        bannerLists:null
     },
     created(){
         this.getDetails()

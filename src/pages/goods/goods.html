@@ -19,46 +19,20 @@
   <link rel="stylesheet" href="./css/goods_theme.css">
   <link rel="stylesheet" href="./css/goods_mars.css">
   <link rel="stylesheet" href="./css/goods_sku.css"> -->
+  <style>
+      [v-cloak]{
+          display:none;
+      }
+  </style>
 </head>
 
 <body class=" body-fixed-bottom
             default-theme">
-  <div id="app" v-if="details">
+  <div id="app" v-if="details" v-cloak>
     <div class="container wap-goods internal-purchase" style="min-height: 617px;">
       <div class="content no-sidebar">
         <div class="content-body">
-          <div class="custom-image-swiper custom-goods-swiper js-swp swp">
-            <div class="swiper-wrapper js-swp-wrap" style="height: 375px;" data-height="320">
-              <div class="swp-page" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; display: block; transform: translate3d(-9999px, 0px, 0px);">
-                <img class="" src="https://img.yzcdn.cn/upload_files/2017/07/12/FkSvYz8FLLD9-t0smXO43hF6ov7S.jpg?imageView2/2/w/980/h/980/q/75/format/webp">
-              </div>
-              <div class="swp-page" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; display: block; transform: translate3d(-375px, 0px, 0px);">
-                <img class="js-res-load" data-src="https://img.yzcdn.cn/upload_files/2017/07/12/FvBRA_j6wl7CBVuNHQPl7FHkj0b1.jpg?imageView2/2/w/980/h/980/q/75/format/webp"
-                  src="https://img.yzcdn.cn/upload_files/2017/07/12/FvBRA_j6wl7CBVuNHQPl7FHkj0b1.jpg?imageView2/2/w/980/h/980/q/75/format/webp">
-              </div>
-              <div class="swp-page page-in-view" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; display: block; transform: translate3d(0px, 0px, 0px);">
-                <img class="js-res-load" data-src="https://img.yzcdn.cn/upload_files/2017/07/12/FpetvOfbRCRmyeg32DBunok9Uvmo.jpg?imageView2/2/w/980/h/980/q/75/format/webp"
-                  src="https://img.yzcdn.cn/upload_files/2017/07/12/FpetvOfbRCRmyeg32DBunok9Uvmo.jpg?imageView2/2/w/980/h/980/q/75/format/webp">
-              </div>
-              <div class="swp-page" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; display: block; transform: translate3d(375px, 0px, 0px);">
-                <img class="js-res-load" data-src="https://img.yzcdn.cn/upload_files/2017/07/12/FqYpph8-5qfY-sCecemc7LTZb2O2.jpg?imageView2/2/w/980/h/980/q/75/format/webp"
-                  src="https://img.yzcdn.cn/upload_files/2017/07/12/FqYpph8-5qfY-sCecemc7LTZb2O2.jpg?imageView2/2/w/980/h/980/q/75/format/webp">
-              </div>
-              <div class="swp-page" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; display: block; transform: translate3d(-9999px, 0px, 0px);">
-                <img class="js-res-load" data-src="https://img.yzcdn.cn/upload_files/2017/07/12/FmgpyGwZqitXF7LWnVzmHHmCVfB4.jpg?imageView2/2/w/980/h/980/q/75/format/webp"
-                  src="https://img.yzcdn.cn/upload_files/2017/07/12/FmgpyGwZqitXF7LWnVzmHHmCVfB4.jpg?imageView2/2/w/980/h/980/q/75/format/webp">
-              </div>
-            </div>
-            <div class="swiper-pagination js-swiper-pagination">
-              <ul class="swp-thumbnail-list">
-                <li class="swiper-pagination-switch"></li>
-                <li class="swiper-pagination-switch"></li>
-                <li class="swiper-pagination-switch swiper-active-switch"></li>
-                <li class="swiper-pagination-switch"></li>
-                <li class="swiper-pagination-switch"></li>
-              </ul>
-            </div>
-          </div>
+            <swipe :lists='bannerLists' v-if='bannerLists'></swipe>
           <!-- <script id="resize-img-script-used"></script> -->
           <div class="goods-header">
             <h2 class="title">{{details.title}}</h2>
