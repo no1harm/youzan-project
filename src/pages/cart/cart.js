@@ -14,7 +14,7 @@ new Vue({
         lists:null,
         total:0,
         editingShop:null,
-        editingShopIndex:-1
+        editingShopIndex:-1,
     },
     computed:{
         allSelected:{
@@ -146,6 +146,25 @@ new Vue({
                 number:1
             }).then(res=>{
                 good.number++
+            })
+        },
+        remove(shop,shopIndex,good,goodIndex){
+            axios.post(url.cartRemove,{
+                id:good.id
+            }).then(res=>{
+                shop.goodsList.splice(goodIndex,1)
+                if(!shop.goodsList.length){
+                    this.lists.splice(shopIndex,1)
+                    this.removeShop()
+                }
+            })
+        },
+        removeShop(){
+            this.editingShop = null
+            this.editingShopIndex = -1
+            this.lists.forEach(shop => {
+                shop.editing = false
+                shop.editingMsg = '编辑'
             })
         }
     },
