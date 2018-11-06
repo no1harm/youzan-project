@@ -73,7 +73,7 @@
                             </div>
                           </div>
                           <div class="price c-orange">
-                            ¥<span>189.00 </span></div>
+                            ¥<span>{{good.price}}</span></div>
                         </div>
                         <div class="error-box"></div>
                       </div>
@@ -132,7 +132,7 @@
               </div>
               <!-- 显示状态 -->
               <div class="total-price">
-                合计：¥<span class="js-total-price" style="color: rgb(255, 102, 0);">684.99</span>
+                合计：¥<span class="js-total-price" style="color: rgb(255, 102, 0);">{{total | number}}</span>
                 <p class="c-gray-dark">不含运费</p>
               </div>
               <button href="javascript:;" class="js-go-pay btn btn-orange-dark font-size-14" disabled="disabled">
