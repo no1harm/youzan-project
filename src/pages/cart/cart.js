@@ -7,6 +7,7 @@ import Vue from 'vue'
 import axios from 'axios'
 import qs from 'qs'
 import mixin from 'js/mixin'
+import Velocity from 'velocity-animate'
 
 new Vue({
     el:'.container',
@@ -193,7 +194,24 @@ new Vue({
                 shop.editing = false
                 shop.editingMsg = '编辑'
             })
-        }
+        },
+        start(e,good){
+            // 拿到初始值的坐标
+            good.startX = e.changedTouches[0].clientX
+        },
+        end(e,shopIndex,good,goodIndex){
+            // 拿到结束值的坐标
+            let endX = e.changedTouches[0].clientX
+            let left = '0'
+            if(good.startX - endX > 100){
+                left = '-60px'
+            }
+            if(endX - good.startX > 100){
+                left = '0px'
+            }
+            Velocity(this.$refs[`goods-${shopIndex}-${goodIndex}`],
+                {left})           
+        }   
     },
     mixins:[mixin]
 })

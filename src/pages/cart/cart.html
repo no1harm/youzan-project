@@ -47,7 +47,10 @@
                 <ul class="js-list block block-list block-list-cart border-0">
                   <li class="block-item block-item-cart " 
                       v-for="(good,goodIndex) in shop.goodsList"
-                      :class="{editing:shop.editing}">
+                      :class="{editing:shop.editing}"
+                      :ref="'goods-'+ shopIndex + '-' + goodIndex"
+                      @touchstart="start($event,good)"
+                      @touchend="end($event,shopIndex,good,goodIndex)">
                     <div>
                       <div class="check-container" @click='selectGood(shop,good)'>
                         <span class="check" :class="{checked:editingShop?good.removeChecked:good.checked}"></span>
