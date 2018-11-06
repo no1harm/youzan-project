@@ -15,6 +15,7 @@ new Vue({
         total:0,
         editingShop:null,
         editingShopIndex:-1,
+        removeData:null
     },
     computed:{
         allSelected:{
@@ -46,7 +47,7 @@ new Vue({
                 if(this.editingShop){
                     this.editingShop.removeChecked = newVal
                     this.editingShop.goodsList.forEach(good=>{
-                        goode.removeChecked = newVal
+                        good.removeChecked = newVal
                     })
                 }
             }
@@ -149,6 +150,7 @@ new Vue({
             })
         },
         remove(shop,shopIndex,good,goodIndex){
+            this.removeData = {shop,shopIndex,good,goodIndex}
             axios.post(url.cartRemove,{
                 id:good.id
             }).then(res=>{
@@ -157,6 +159,31 @@ new Vue({
                     this.lists.splice(shopIndex,1)
                     this.removeShop()
                 }
+            })
+        },
+        removeList(){
+            let ids = []
+            this.removeLists.forEach(good=>{
+                ids.push(good.id)
+            })
+            axios.post(url.cartMremove,{
+                ids
+            }).then(res=>{
+                let arr = []
+                this.editingShop.goodsList.forEach(good =>{
+                    let index = this.removeLists.findIndex(item =>{
+                        return item.id === good.id
+                    })
+                    if(index === -1){
+                        arr.push(good)
+                    }
+                    if(arr.length){
+                        this.editingShop.goodsList = arr
+                    }else{
+                        this.lists.splice(this.editingShopIndex,1)
+                        this.removeShop()
+                    }
+                })
             })
         },
         removeShop(){
