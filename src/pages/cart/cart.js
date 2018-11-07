@@ -171,10 +171,11 @@ new Vue({
             // })
             Cart.remove(good.id).then(res=>{
                 shop.goodsList.splice(goodIndex,1)
-                    if(!shop.goodsList.length){
-                        this.lists.splice(shopIndex,1)
-                        this.removeShop()
-                    }
+                if(!shop.goodsList.length){
+                    this.lists.splice(shopIndex,1)
+                    this.removeShop()
+                }
+                // this.$refs[`goods-${shopIndex}-${goodIndex}`][0].style.left = '0px'
             })
         },
         removeList(){
