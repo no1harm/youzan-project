@@ -7,6 +7,24 @@ let routes = [
     {
         path:'/',
         components:require('./components/member.vue')
+    },
+    {
+        path:'/address',
+        components:require('./components/address.vue'),
+        children:[
+            {
+                path:'',
+                redirect:'all'
+            },
+            {
+                path:'all',
+                components:require('./components/all.vue')
+            },
+            {
+                path:'form',
+                components:require('./components/form.vue')
+            }
+        ]
     }
 ]
 

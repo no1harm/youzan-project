@@ -596,9 +596,8 @@ only screen and (min-device-pixel-ratio: 1.5) {
   background-image: url("https://b.yzcdn.cn/v2/image/pf/icon/uncheck.png")
 }
 
-.address-list .address-item::after {
+.address-list .address-edit {
   position: absolute;
-  content: '修改';
   font-size: 12px;
   padding-left: 25px;
   color: #999;

@@ -1,33 +1,15 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="format-detection" content="telephone=no">
-  <meta http-equiv="cleartype" content="on">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="keywords" content="服装批发,河南批发,郑州批发,进货,服装进货,网上批发,网上进货,郑州服装批发,河南服装批发,郑州服装进货,有赞批发">
-  <meta name="description" content="有赞批发—传统批发+互联网解决方案,提供服装批发、服装货源、进货服务、线下整合等一整套互联网解决方案">
-  <link rel="shortcut icon" href="https://static.youzan.com/v2/image/yz_fc.ico">
-  <title>管理收货地址</title>
-    <link rel="stylesheet" href="./css/address_base.css">
-    <link rel="stylesheet" href="./css/address.css">
-</head>
-
-<body class="" style="cursor:pointer;">
+<template>
   <div class="container " style="min-height: 597px;">
     <div class="section section-first">
       <div class="block form js-form">
-        <input class="js-id" name="id" type="hidden" value="69150287">
+        <input class="js-id" name="id" type="hidden" value="">
         <div class="block-item" style="border-top:0;">
           <label>收货人</label>
-          <input type="text" placeholder="请输入姓名" name="user_name" value="tony" maxlength="20">
+          <input type="text" placeholder="请输入姓名" name="user_name" value="" maxlength="20">
         </div>
         <div class="block-item">
           <label>联系电话</label>
-          <input type="tel" placeholder="联系电话" name="tel" value="13112345678" maxlength="11">
+          <input type="tel" placeholder="联系电话" name="tel" value="" maxlength="11">
         </div>
         <div class="block-item">
           <label>选择地区</label>
@@ -71,54 +53,46 @@
             </select>
             <select class="js-city-selector">
               <option value="-1">选择城市</option>
-              <option value="440100">广州市</option>
-              <option value="440200">韶关市</option>
-              <option value="440300">深圳市</option>
-              <option value="440400">珠海市</option>
-              <option value="440500">汕头市</option>
-              <option value="440600">佛山市</option>
-              <option value="440700">江门市</option>
-              <option value="440800">湛江市</option>
-              <option value="440900">茂名市</option>
-              <option value="441200">肇庆市</option>
-              <option value="441300">惠州市</option>
-              <option value="441400">梅州市</option>
-              <option value="441500">汕尾市</option>
-              <option value="441600">河源市</option>
-              <option value="441700">阳江市</option>
-              <option value="441800">清远市</option>
-              <option value="441900">东莞市</option>
-              <option value="442000">中山市</option>
-              <option value="445100">潮州市</option>
-              <option value="445200">揭阳市</option>
-              <option value="445300">云浮市</option>
             </select>
-            <select class="js-county-selector" name="area_code" data-code="440402">
+            <select class="js-county-selector" name="area_code" data-code="">
               <option value="-1">选择地区</option>
-              <option value="440402">香洲区</option>
-              <option value="440403">斗门区</option>
-              <option value="440404">金湾区</option>
             </select>
           </div>
         </div>
         <div class="block-item">
           <label>详细地址</label>
-          <input type="text" placeholder="街道门牌信息" name="address_detail" value="南方软件园" maxlength="100">
+          <input type="text" placeholder="街道门牌信息" name="address_detail" value="" maxlength="100">
         </div>
       </div>
     </div>
     <div class="block section js-save block-control-btn">
       <div class="block-item c-blue center">保存</div>
     </div>
-    <div class="block section js-delete block-control-btn">
+    <div class="block section js-delete hide block-control-btn">
       <div class="block-item c-red center">删除</div>
     </div>
-    <div class="block stick-bottom-row center js-save-default">
+    <div class="block stick-bottom-row center js-save-default hide">
       <button class="btn btn-standard js-save-default-btn">设为默认收货地址</button>
     </div>
   </div>
-  <a style="display: block;" href="https://pfmarket.youzan.com/market/home?m_alias=3nu78u467kddj" class="ft-copyright"></a>
+</template>
 
-</body>
+<script>
+export default {
+    name: '',
+    data() {
+      return {
 
-</html>
+      }
+    },
+    components: {
+
+    }
+}
+</script>
+
+<style scoped>
+@import './address_base.css';
+@import './address.css';
+</style>
+
