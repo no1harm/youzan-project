@@ -9,6 +9,8 @@ import qs from 'qs'
 import mixin from 'js/mixin'
 import Velocity from 'velocity-animate'
 
+import Cart from 'js/cartService.js'
+
 new Vue({
     el:'.container',
     data:{
@@ -135,31 +137,44 @@ new Vue({
         },
         reduce(good){
             if(good.number === 1) return
-            axios.post(url.cartReduce,{
-                id:good.id,
-                number:1
-            }).then(res=>{
+            // axios.post(url.cartReduce,{
+            //     id:good.id,
+            //     number:1
+            // }).then(res=>{
+            //     good.number--
+            // })
+            Cart.reduce(good.id).then(res=>{
                 good.number--
             })
         },
         add(good){
-            axios.post(url.cartAdd,{
-                id:good.id,
-                number:1
-            }).then(res=>{
+            // axios.post(url.cartAdd,{
+            //     id:good.id,
+            //     number:1
+            // }).then(res=>{
+            //     good.number++
+            // })
+            Cart.add(good.id).then(res=>{
                 good.number++
             })
         },
         remove(shop,shopIndex,good,goodIndex){
             this.removeData = {shop,shopIndex,good,goodIndex}
-            axios.post(url.cartRemove,{
-                id:good.id
-            }).then(res=>{
+            // axios.post(url.cartRemove,{
+            //     id:good.id
+            // }).then(res=>{
+            //     shop.goodsList.splice(goodIndex,1)
+            //     if(!shop.goodsList.length){
+            //         this.lists.splice(shopIndex,1)
+            //         this.removeShop()
+            //     }
+            // })
+            Cart.remove(good.id).then(res=>{
                 shop.goodsList.splice(goodIndex,1)
-                if(!shop.goodsList.length){
-                    this.lists.splice(shopIndex,1)
-                    this.removeShop()
-                }
+                    if(!shop.goodsList.length){
+                        this.lists.splice(shopIndex,1)
+                        this.removeShop()
+                    }
             })
         },
         removeList(){
