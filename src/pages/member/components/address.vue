@@ -14,7 +14,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 @import './address_base.css';
 @import './address.css';
 </style>

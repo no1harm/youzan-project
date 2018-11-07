@@ -11,6 +11,7 @@ function fetch(method='get',url, data) {
                 location.href = 'login.html'
                 resolve(res)
             }
+            resolve(res)
         }).catch(err => {
             reject(err)
         })

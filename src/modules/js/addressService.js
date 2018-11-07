@@ -3,7 +3,7 @@ import fetch from './fetch.js'
 
 class Address {
     static list(){
-        return fetch(url.addressLists)
+        return fetch('get',url.addressLists)
     }
     static add(data){
         return fetch('post',addressAdd,data)
