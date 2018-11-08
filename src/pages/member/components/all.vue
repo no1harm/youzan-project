@@ -31,13 +31,19 @@ export default {
     name: 'All',
     data() {
       return {
-        lists:null
+        // lists:null
       }
     },
     created() {
-        Address.list().then(res=>{
-          this.lists = res.data.lists
-        })
+        // Address.list().then(res=>{
+        //   this.lists = res.data.lists
+        // })
+        this.$store.dispatch('getLists')
+    },
+    computed:{
+      lists(){
+        return this.$store.state.lists
+      }
     },
     methods:{
         toEdit(list){
