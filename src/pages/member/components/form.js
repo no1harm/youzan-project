@@ -45,6 +45,18 @@ export default {
                     this.$router.go(-1)
                 })
             }
+        },
+        remove(){
+            if(window.confirm('确认删除')){
+                Address.remove(this.id).then(res=>{
+                    this.$router.go(-1)
+                })
+            }
+        },
+        setDefalut(){
+            Address.setDefault(this.id).then(res=>{
+                this.$router.go(-1)
+            })
         }
     },
     watch:{
