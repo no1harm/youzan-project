@@ -1,7 +1,7 @@
 <template>
     <div class="container " style="min-height: 597px;">
       <div class="block-list address-list section section-first js-no-webview-block">
-        <a class="block-item js-address-item address-item address-item-default" 
+        <a class="block-item js-address-item address-item" 
             @click="toEdit(list)"
             v-for="list in lists"
             :class="{'address-item-default':list.isDefault}"
@@ -38,7 +38,9 @@ export default {
         // Address.list().then(res=>{
         //   this.lists = res.data.lists
         // })
-        this.$store.dispatch('getLists')
+        if(!this.lists){
+          this.$store.dispatch('getLists')
+        }
     },
     computed:{
       lists(){

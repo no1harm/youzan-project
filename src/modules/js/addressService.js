@@ -11,7 +11,7 @@ class Address {
     static remove(id){
         return fetch('post',url.addressRemove,id)
     }
-    static upddate(data){
+    static update(data){
         return fetch('post',url.addressUpdate,data)
     }
     static setDefault(id){
