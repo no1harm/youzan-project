@@ -5,7 +5,7 @@
         <input class="js-id" name="id" type="hidden" value="">
         <div class="block-item" style="border-top:0;">
           <label>收货人</label>
-          <input type="text" placeholder="请输入姓名" name="user_name" v-model="name" maxlength="20">
+          <input type="text" placeholder="请输入姓名" name="user_name" v-model.trim="name" maxlength="20">
         </div>
         <div class="block-item">
           <label>联系电话</label>

@@ -6,7 +6,7 @@ class Address {
         return fetch('get',url.addressLists)
     }
     static add(data){
-        return fetch('post',addressAdd,data)
+        return fetch('post',url.addressAdd,data)
     }
     static remove(id){
         return fetch('post',url.addressRemove,id)
