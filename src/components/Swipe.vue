@@ -7,7 +7,7 @@
             </a>
             </div>
         </div>
-        <div class="swiper-pagination"></div>
+        <div class="swiper-pagination" style="text-align: center"></div>
     </div>
 </template>
 
@@ -37,8 +37,5 @@ export default {
 .swiper-slide img{
     height: 100%;
     width: 100%;
-}
-.swiper-pagination{
-    text-align: center;
 }
 </style>
