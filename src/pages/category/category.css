@@ -858,8 +858,8 @@ only screen and (min-device-pixel-ratio:1.5) {
 
 .main-content .category-item-name {
   display: block;
-  margin-top: 0;
-  font-size: 12px
+  margin-top: 8px;
+  font-size: 12px;
 }
 
 .main-content .category-loading {
