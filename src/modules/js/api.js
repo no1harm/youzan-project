@@ -20,7 +20,7 @@ let url = {
 }
 
 // 开发环境和真实环境的切换
-let host =  'http://rap2api.taobao.org/app/mock/7058'
+let host =  'https://easy-mock.com/mock/5c07a8297f3a33135e52a2d5/youzan-project'
 
 for (let key in url){
     if(url.hasOwnProperty(key)){
